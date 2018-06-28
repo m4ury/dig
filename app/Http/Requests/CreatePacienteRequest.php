@@ -24,10 +24,10 @@ class CreatePacienteRequest extends FormRequest
     public function rules()
     {
         return [
-            'rut' => 'required|unique:pacientes,rut|max:10',
-            'nombres' => 'required|min:3|alpha',
+            'rut' => 'required|unique:pacientes,rut|max:12',
+            'nombres' => 'required|min:3',
             'edad' => 'required|numeric|min:0',
-            'apellidos' => 'required|min:3|alpha',
+            'apellidos' => 'required|min:3',
             'direccion' => 'required|min:3',
             'sector' => 'required',
             'sexo' => 'required',

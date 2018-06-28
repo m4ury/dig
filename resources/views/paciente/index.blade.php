@@ -35,7 +35,7 @@
               <td>{{ $pacientes->sexo }}</td>
               <td>{{ $pacientes->fecha_nacimiento }}</td>
 
-                <td class="td-actions text-right" >
+                <td class="td-actions pull-right" >
 
                     {!! Form::open(['route' => ['paciente.destroy', $pacientes->id], 'method' => 'DELETE']) !!}
                     @csrf
@@ -47,6 +47,7 @@
                     </a>
 
                     {!! Form::button('<i class="fa fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-simple btn-xs', 'id' => 'delete'] ) !!}
+
 
                     {!! Form::close() !!}
                 </td>
@@ -79,10 +80,11 @@
     <script type="text/javascript">
     $(document).ready(function(){
     $('#delete').click(function(e) {
-      if (!confirm('Desea eliminar este registro?')) {
+        if (confirm('Desea eliminar este registro?')) {
+            return;
+        }
         e.stopImmediatePropagation();
         e.preventDefault();
-      }
     });
   });
     </script>

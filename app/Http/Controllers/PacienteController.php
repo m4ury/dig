@@ -59,7 +59,7 @@ class PacienteController extends Controller
     {
         $paciente = Paciente::findOrFail($id);
 
-        $control = $paciente->controls;
+        $control = $paciente->controls()->orderBy('created_at', 'desc')->take(5)->get();
 
         $patologia = $paciente->patologias()->pluck('nombre', 'patologia_id');
 
