@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/inputmask.css') }}" rel="stylesheet">
+
 
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
 </head>
@@ -75,5 +77,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
 </body>
 </html>

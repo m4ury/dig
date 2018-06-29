@@ -69,22 +69,21 @@
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="{{ asset('js/jquery.js') }}"></script>
-    <!-- <script src="{{ asset('js/test.js') }}"></script> -->
     <script>
         $(document).ready(function(){
-            $('#alert').delay(2000).slideUp(200, function(){
+            $('div#alert').delay(2000).slideUp(200, function(){
               $(this).remove();
             });
         }, 5000);
     </script>
     <script type="text/javascript">
     $(document).ready(function(){
-    $('#delete').click(function(e) {
-        if (confirm('Desea eliminar este registro?')) {
-            return;
-        }
-        e.stopImmediatePropagation();
-        e.preventDefault();
+        $('button#delete').click(function(e) {
+            if (confirm('Seguro desea eliminar este registro?')) {
+                return;
+            }
+            e.stopImmediatePropagation();
+            e.preventDefault();
     });
   });
     </script>
