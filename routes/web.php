@@ -19,13 +19,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('paciente', 'PacienteController');
 
-Route::resource('user', 'UserController');
-
 Route::resource('control', 'ControlController');
 
 Route::resource('familia', 'FamiliaController');
 
+Route::resource('patologia', 'PatologiaController');
+
+Route::resource('complicacion', 'ComplicacionController');
+
+Route::resource('user', 'UserController');
+
 Route::resource('product', 'ProductController');
+
+
 
 
 

@@ -8,7 +8,6 @@
         <th>Sexo</th>
         <th>Fecha Nacimiento</th>
         <th>Jefe Familia</th>
-
     </tr>
     </thead>
     <tbody>

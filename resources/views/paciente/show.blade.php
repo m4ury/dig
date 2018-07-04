@@ -29,6 +29,16 @@
                                 </ul>
                                 @endforeach
                             </div>
+
+                            <div class="form-group">
+{{ Form::open() }}
+                                {{  Form::select('patologia', $patologiasAll, null, ['class' => 'form-control', 'placeholder' => 'Seleccione Patologia...']) }}
+
+                                <div class="py-2 text-lg-center">
+                                    <a href="{{ route('patologia.create', ['paciente_id' => $paciente->id]) }}" class="btn btn-outline-success" type="button"></a>
+                                </div>
+{{ Form::close() }}
+                            </div>
                         </div>
                     </div>
 
@@ -54,6 +64,9 @@
                                 </li>
                             </ul>
                             @endforeach
+                                    <div class="py-2 text-lg-right">
+                                        <a href="{{ route('complicacion.create', ['paciente_id' => $paciente->id]) }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+                                    </div>
                         </div>
                     </div>
                 </div>
@@ -71,33 +84,7 @@
                         <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="card-body">
                     <div class="table">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Tipo Control</th>
-                                <th>Peso</th>
-                                <th>Talla</th>
-                                <th>RCV</th>
-                                <th>IMC</th>
-                                <th>Proximo Control</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($control as $controles)
-                                <tr>
-                                    <td>{{ $controles->created_at->format('d-m-Y') }}</td>
-                                    <td>{{ $controles->tipo_control }}</td>
-                                    <td>{{ $controles->peso }}</td>
-                                    <td>{{ $controles->talla }}</td>
-                                    <td>{{ $controles->rcv }}</td>
-                                    <td>{{ $controles->imc }}</td>
-                                    <td>{{ $controles->proximo_control }}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-
+                        @include('control.partials.table')
                         <div class="py-2 text-lg-right">
                             <a href="{{ route('control.create', ['paciente_id' => $paciente->id]) }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
                         </div>

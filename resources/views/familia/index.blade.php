@@ -4,13 +4,6 @@
         <div class="py-5 text-center">
             <h2 class="title">Familias</h2>
         </div>
-
-        @if(session()->has('info'))
-            <div id="alert" class="alert alert-success text-center"><strong>{{ session('info') }}</strong></div>
-        @elseif(session()->has('danger'))
-            <div id="alert" class="alert alert-danger text-center"><strong>{{ session('danger') }}</strong></div>
-        @endif
-
 <div class="row">
 <div class="table">
     <table class="table table-striped">
@@ -33,7 +26,7 @@
               <td>{{ $familias->sector }}</td>
               <td>{{ $familias->direccion }}</td>
 
-                <td class="td-actions text-right">
+                <td class="td-actions pull-right">
 
                     <form method="POST" action="{{ route('familia.destroy', $familias->id) }}">
                         {{ method_field('DELETE') }}
@@ -46,7 +39,7 @@
                             <i class="fa fa-edit"></i>
                         </a>
 
-                        <button type="submit" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
+                        <button id="delete" type="submit" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
                             <i class="fa fa-times"></i>
                         </button>
 
@@ -57,23 +50,14 @@
     	</tbody>
     </table>
     <div class="form-group">
-        <a id="new" class="btn btn-success" href="{{ route('familia.create') }}">
+        <a id="new" class="btn btn-outline-primary" href="{{ route('familia.create') }}">
             Nuevo <i class="fas fa-users"></i>
         </a>
     </div>
-      <ul class="pagination">
+    <div>
         {{ $familia->links() }}
-      </ul>
-</div>
+    </div>
+      </div>
 </div>
     </div>
-    <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{ asset('js/test.js') }}"></script>
-    <script>
-        $(document).ready(function(){
-            $('#alert').delay(2000).slideUp(200, function(){
-              $(this).remove();
-            });
-        }, 5000);
-    </script>
     @stop

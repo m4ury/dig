@@ -4,13 +4,6 @@
       <div class="py-5 text-center">
           <h2 class="title">Pacientes</h2>
       </div>
-
-      @if(session()->has('info'))
-          <div id="alert" class="alert alert-success text-center"><strong>{{ session('info') }}</strong></div>
-      @elseif(session()->has('danger'))
-          <div id="alert" class="alert alert-danger text-center"><strong>{{ session('danger') }}</strong></div>
-      @endif
-
 <div class="row">
 <div class="table">
     <table class="table table-striped">
@@ -56,7 +49,7 @@
     	</tbody>
     </table>
     <div class="form-group">
-        <a id="new" class="btn btn-success" href="{{ route('paciente.create') }}">
+        <a id="new" class="btn btn-outline-primary" href="{{ route('paciente.create') }}">
             Nuevo <i class="fas fa-user-plus"></i>
         </a>
     </div>
@@ -66,25 +59,4 @@
 </div>
 </div>
 </div>
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="{{ asset('js/jquery.js') }}"></script>
-    <script>
-        $(document).ready(function(){
-            $('div#alert').delay(2000).slideUp(200, function(){
-              $(this).remove();
-            });
-        }, 5000);
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $('button#delete').click(function(e) {
-            if (confirm('Seguro desea eliminar este registro?')) {
-                return;
-            }
-            e.stopImmediatePropagation();
-            e.preventDefault();
-    });
-  });
-    </script>
 @stop

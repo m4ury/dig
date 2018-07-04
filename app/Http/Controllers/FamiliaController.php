@@ -87,11 +87,15 @@ class FamiliaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Familia  $familia
+     * @param  \App\Familia  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Familia $familia)
+    public function destroy($id)
     {
-        //
+        if(Familia::destroy($id)) {
+            return redirect('familia')->with('danger', 'Familia eliminada!');
+        }else{
+            return view('familia');
+        }
     }
 }

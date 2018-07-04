@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Dig') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -71,6 +71,11 @@
         </nav>
 
         <main class="py-4">
+            @if(session()->has('info'))
+                <div id="alert" class="alert alert-success text-center"><strong>{{ session('info') }}</strong></div>
+            @elseif(session()->has('danger'))
+                <div id="alert" class="alert alert-danger text-center"><strong>{{ session('danger') }}</strong></div>
+            @endif
             @yield('content')
         </main>
     </div>
@@ -78,5 +83,24 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('#alert').delay(2000).slideUp(200, function(){
+                $(this).remove();
+            });
+        }, 5000);
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button#delete').click(function(e) {
+                if (confirm('Seguro desea eliminar este registro?')) {
+                    return;
+                }
+                e.stopImmediatePropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 </html>

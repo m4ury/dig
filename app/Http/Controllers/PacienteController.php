@@ -7,6 +7,7 @@ use App\Familia;
 use App\Http\Requests\CreatePacienteRequest;
 use App\Http\Requests\EditPacienteRequest;
 use App\Paciente;
+use App\Patologia;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -59,13 +60,16 @@ class PacienteController extends Controller
     {
         $paciente = Paciente::findOrFail($id);
 
+        $patologiasAll = Patologia::pluck('nombre', 'id');
+        //echo $patologiasAll;
+
         $control = $paciente->controls()->orderBy('created_at', 'desc')->take(5)->get();
 
         $patologia = $paciente->patologias()->pluck('nombre', 'patologia_id');
 
         $complicacion = $paciente->complicacions()->pluck('nombre', 'complicacion_id');
 
-        return view('paciente.show', compact('paciente', 'patologia', 'complicacion', 'control'));
+        return view('paciente.show', compact('paciente', 'patologia', 'complicacion', 'control', 'patologiasAll'));
     }
 
     /**

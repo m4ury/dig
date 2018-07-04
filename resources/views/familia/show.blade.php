@@ -5,8 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-              <div class="card-header"><h3>Familia: <span class="badge badge-pill badge-primary">{{ $familias->nombre }} {{ $familias->apellidos }}</span></h3></div>
-
+                <div class="card-header"><h3>Familia: <strong>{{ $familias->nombre }} {{ $familias->apellidos }}</strong></h3></div>
                 <div class="card-body">
                   @include('familia.partials.table')
                 </div>
