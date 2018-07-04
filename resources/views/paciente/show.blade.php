@@ -34,8 +34,8 @@
 {{ Form::open() }}
                                 {{  Form::select('patologia', $patologiasAll, null, ['class' => 'form-control', 'placeholder' => 'Seleccione Patologia...']) }}
 
-                                <div class="py-2 text-lg-center">
-                                    <a href="{{ route('patologia.create', ['paciente_id' => $paciente->id]) }}" class="btn btn-outline-success" type="button"></a>
+                                <div class="py-2 text-lg-right">
+                                    <a href="{{ route('patologia.update', ['paciente_id' => $paciente->id]) }}" class="btn btn-outline-success"><i class="fas fa-plus"></i></a>
                                 </div>
 {{ Form::close() }}
                             </div>
