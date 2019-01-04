@@ -106,12 +106,15 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('td#edad').val(function () {
-                var fechaActual = new Date();
+                var anioActual = new Date().getFullYear();
+                var mesActual = new Date().getMonth();
+                var diaActual = new Date().getDay();
+
                 var fechaNac = $('#fechaNacimiento').text();
 
-                console.log(fechaActual.getFullYear());
-                console.log(fechaNac);
+                var edad = anioActual - 1987;
 
+                console.log(edad);
             })
         });
     </script>
