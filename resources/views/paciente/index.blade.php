@@ -24,9 +24,9 @@
               <td>{{ $pacientes->rut }}</td>
               <td>{{ $pacientes->nombres }}</td>
               <td>{{ $pacientes->apellidos }}</td>
-              <td>{{ $pacientes->edad }}</td>
+              <td id="edad">{{ $pacientes->edad }}</td>
               <td>{{ $pacientes->sexo }}</td>
-              <td>{{ $pacientes->fecha_nacimiento }}</td>
+              <td id="fechaNacimiento">{{ $pacientes->fecha_nacimiento }}</td>
 
                 <td class="td-actions pull-right" >
 

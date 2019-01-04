@@ -7,3 +7,13 @@ $(document).ready(function() {
     $('#imc').val(imcF);
   });
 });
+
+$(document).ready(function () {
+    $('td#edad').mouseover(function () {
+        var fechaActual = new Date();
+        var fechaNacimiento = $('#fechaNacimiento');
+
+        console.log(fechaActual);
+
+    })
+});

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     protected $fillable = [
-        'rut', 'nombres', 'apellidos', 'sexo', 'edad', 'direccion', 'sector', 'telefono', 'fecha_nacimiento',
+        'rut', 'nombres', 'apellidos', 'sexo', 'direccion', 'sector', 'telefono', 'fecha_nacimiento',
     ];
 
     public function patologias()

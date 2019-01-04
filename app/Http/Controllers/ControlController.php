@@ -42,9 +42,9 @@ class ControlController extends Controller
     {
         if($control = Control::create($request->all())){
           //return view('paciente.show', ['paciente_id' => $request->paciente_id, compact('paciente')]);
-          return redirect('paciente')->with('info', 'Nuevo control creado!');
+          return redirect('paciente.show')->with('info', 'Nuevo control creado!');
         }else {
-          return redirect('paciente')->with('info', 'Algo salio mal');
+          return redirect('paciente.show')->with('info', 'Algo salio mal');
         }
     }
 

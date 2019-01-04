@@ -81,9 +81,10 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/test.js') }}"></script>
+
     <script>
         $(document).ready(function(){
             $('#alert').delay(2000).slideUp(200, function(){
@@ -100,6 +101,18 @@
                 e.stopImmediatePropagation();
                 e.preventDefault();
             });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('td#edad').val(function () {
+                var fechaActual = new Date();
+                var fechaNac = $('#fechaNacimiento').text();
+
+                console.log(fechaActual.getFullYear());
+                console.log(fechaNac);
+
+            })
         });
     </script>
 </body>

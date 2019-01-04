@@ -6,6 +6,12 @@
 <div class="form-group">
     {{ Form::number('peso', $control->peso, ['class' => 'form-control', 'placeholder' => 'Peso...', 'step' => 'any', 'id' => 'peso']) }}
 </div>
+
+{{--<div class="form-group">
+    {{ Form::range('peso2', $control->peso, ['class' => 'form-control', 'step' => 'any', 'id' => 'peso2'], ['min' => 0, 'max' => 100]) }}
+
+</div>--}}
+
 <div class="form-group">
     {{ Form::number('talla', $control->talla, ['class' => 'form-control', 'placeholder' => 'Talla...', 'step' => 'any', 'id' => 'talla']) }}
 </div>

@@ -44,7 +44,7 @@
     @endif
 </div>
 <div class="form-group">
-    {{  Form::select('sexo', ['masculino' => 'Masculino', 'femenino' => 'Femenino', 'compañeres' => 'Compañeres'], $paciente->sexo, ['class' => 'form-control'.($errors->has('sexo') ? ' is-invalid' : ''), 'placeholder' => 'Indique su sexo...']) }}
+    {{  Form::select('sexo', ['masculino' => 'Masculino', 'femenino' => 'Femenino', 'compañeres' => 'Compañeres'], $paciente->sexo, ['class' => 'form-control'.($errors->has('sexo') ? ' is-invalid' : ''), 'placeholder' => 'Indique su sexo...', 'value' => old('sexo')]) }}
     @if ($errors->has('sexo'))
       <span class="invalid-feedback">
         <strong>{{ $errors->first('sexo') }}</strong>
@@ -69,3 +69,6 @@
     <a class="btn btn-secondary" href="{{ url('paciente') }}">Atras</a>
 </div>
 {{ Form::close() }}
+
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/test.js') }}"></script>

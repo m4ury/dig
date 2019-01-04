@@ -26,7 +26,7 @@ class CreatePacienteRequest extends FormRequest
         return [
             'rut' => 'required|unique:pacientes,rut|max:12',
             'nombres' => 'required|min:3',
-            'edad' => 'required|numeric|min:0',
+//            'edad' => 'required|numeric|min:0',
             'apellidos' => 'required|min:3',
             'direccion' => 'required|min:3',
             'sector' => 'required',
